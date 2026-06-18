@@ -5,8 +5,8 @@ A tight, honest walkthrough you can run live or narrate from screenshots.
 ## Before the room (1 min setup, do this beforehand)
 
 ```bash
-cd Interview_slides
-source .venv-sentinel/bin/activate     # or use .venv-sentinel/bin/python directly
+cd sentinel-amr
+source .venv/bin/activate              # or use .venv/bin/python directly
 ```
 
 Have `metrics/roc.png`, `metrics/shap_global.png`, and an `output/*_report.md` open.

@@ -1,0 +1,30 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python 3.12
+        run: uv venv --python 3.12 .venv
+
+      - name: Install dependencies
+        run: uv pip install --python .venv -r requirements.txt
+
+      - name: Train model + calibrate novelty (artifacts needed by tests)
+        run: |
+          .venv/bin/python -m sentinel.model
+          .venv/bin/python -m sentinel.novelty
+
+      - name: Run tests
+        run: .venv/bin/python -m pytest -q

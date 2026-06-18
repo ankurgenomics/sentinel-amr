@@ -1,5 +1,7 @@
 # SENTINEL
 
+[![tests](https://github.com/ankurgenomics/sentinel-amr/actions/workflows/tests.yml/badge.svg)](https://github.com/ankurgenomics/sentinel-amr/actions/workflows/tests.yml)
+
 **S**urveillance **EN**gine for **T**riage, **I**nterpretation & **N**ovel-pathogen **E**scalation in **L**abs
 
 An explainable, agentic AI/ML prototype for foodborne / clinical pathogen surveillance.
