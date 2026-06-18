@@ -1,0 +1,12 @@
+{
+  "source": "BV-BRC (PATRIC) genome_amr + sp_gene APIs",
+  "taxon_id": 573,
+  "antibiotic": "ciprofloxacin",
+  "n_genomes": 298,
+  "n_features": 3314,
+  "label_counts": {
+    "1": 149,
+    "0": 149
+  },
+  "positive_label": "Resistant"
+}

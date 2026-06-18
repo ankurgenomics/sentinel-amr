@@ -1,0 +1,13 @@
+# SENTINEL prototype dependencies (Python 3.12). On macOS also: brew install libomp
+numpy==2.4.6
+pandas==3.0.3
+scikit-learn==1.9.0
+scipy==1.17.1
+xgboost==3.3.0
+shap==0.52.0
+matplotlib==3.11.0
+biopython==1.87
+requests==2.34.2
+langgraph==1.2.5
+langchain-core==1.4.7
+pytest==8.4.1
