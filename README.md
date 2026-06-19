@@ -137,6 +137,28 @@ The model independently rediscovered correct biology: top global drivers are `CT
 
 Reproduced by `make eval`.
 
+### Evaluation visuals
+
+**ROC curve — how well the model separates resistant from susceptible**
+
+![ROC curve](docs/roc.png)
+
+**Precision-recall curve — performance on the dangerous resistant cases**
+
+![PR curve](docs/pr.png)
+
+**Confusion matrix — 84 held-out genomes**
+
+![Confusion matrix](docs/confusion.png)
+
+> 36 true susceptible + 32 true resistant correct. 7 false alarms (susceptible called resistant). 9 missed resistant — these are the cases the confidence gate and human review are designed to catch.
+
+**SHAP global importance — genes the model relies on most**
+
+![SHAP global importance](docs/shap_global.png)
+
+> The model independently rediscovered known AMR biology. Top drivers — dihydrofolate reductase, DNA topoisomerase IV (the fluoroquinolone target), AcrR efflux regulator, KPC beta-lactamase — are exactly the genes a microbiologist would expect. No biology was hard-coded.
+
 ---
 
 ## Technology stack
