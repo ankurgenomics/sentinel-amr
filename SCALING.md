@@ -1,9 +1,8 @@
-# SENTINEL at national scale (when money is no object)
+# SENTINEL at national scale
 
 The local prototype is deliberately small and honest. This document describes how
-the *same architecture* scales to a production national biosurveillance platform for
-an agency like SFA. The logic of every node is identical to the demo - only the
-data, models, and infrastructure grow.
+the *same architecture* scales to a production biosurveillance platform. The logic
+of every node is identical to the demo — only the data, models, and infrastructure grow.
 
 ## 1. From gene-presence to foundation-model embeddings
 
@@ -46,17 +45,10 @@ flowchart TD
 - **Storage:** genome + decision lake on S3 with full lineage of every model version and input (reproducibility + audit).
 - **Serving:** the LangGraph agent runs as a durable workflow; the critic node can call an LLM (Claude) with RAG over CARD/VFDB/clinical guidelines for narrative rationale, grounded and cited.
 
-## 4. Validation & governance (non-negotiable for a government deployment)
+## 4. Validation & governance
 
-- **Lineage-split evaluation** (e.g. hold out entire ST258 clade) to prove the model survives new clones - the failure mode random splits hide.
+- **Lineage-split evaluation** (e.g. hold out entire ST258 clade) to prove the model survives new clones — the failure mode random splits hide.
 - **Calibration & abstention:** report calibrated probabilities; abstain + escalate below a confidence floor (already prototyped here).
 - **Drift monitoring:** track embedding-space drift and AMR-gene prevalence over time; trigger retraining.
-- **Explainability of record:** every automated decision ships with SHAP / integrated-gradients attributions and a human-readable rationale - auditable by regulators.
+- **Explainability of record:** every automated decision ships with SHAP / integrated-gradients attributions and a human-readable rationale — auditable by regulators.
 - **Human-in-the-loop:** AI triages and prioritises; a scientist confirms before any reportable action. SENTINEL never auto-decides on novel or low-confidence cases.
-
-## 5. Why this is the right bet for SFA
-
-The differentiator is not a flashier classifier - everyone has an AMR model. It is a
-**deployable, auditable, novelty-aware surveillance system** that institutionalises
-trust: honest metrics, named-gene explanations, OOD escalation, and human oversight.
-That is what a national food-safety agency can actually put into production.
